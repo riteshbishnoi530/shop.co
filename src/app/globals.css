@@ -1,26 +1,32 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: 'integral-cf';
+  src: url("/assets/font/Fontspring-DEMO-integralcf-bold.otf");
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: 'Satoshi';
+  src: url("/assets/font/Satoshi-Medium.otf");
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+*{
+  font-family: 'Satoshi';
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.font-integral{
+  font-family: 'integral-cf';
+}
+
+.bg-custom-grey{
+  background-color: #F0F0F0;
+}
+.footer-icon:hover path {
+fill: white;
+}
+
+
+.payment-company-images {
+  box-shadow: 0px 0.45px 4.48px 0px #b7b7b714;
+  box-shadow: 0px 4.48px 8.96px 0px #b7b7b714;
 }
