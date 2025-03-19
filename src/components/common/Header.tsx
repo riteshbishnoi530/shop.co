@@ -31,7 +31,7 @@ const Header = () => {
                         </button>
                         <Link
                             href={"/"}
-                            className="text-custom-3xl font-bold leading-[100%] max-lg:text-3xl max-md:text-[25.2px] font-integral"
+                            className="text-[32px] font-bold leading-[100%] max-lg:text-3xl max-md:text-[25.2px] font-integral"
                         >
                             SHOP.CO
                         </Link>
@@ -72,7 +72,7 @@ const Header = () => {
                     </div>
                 
                     <div className="flex gap-10 md:w-full items-center max-sm:gap-3">
-                        <div className="max-w-[577px] max-md:hidden flex items-center bg-[#F0F0F0] rounded-[62px] w-full gap-3.5 py-3.5 px-[18px]">
+                        <div className="max-w-[615px] max-md:hidden flex items-center bg-[#F0F0F0] rounded-[62px] w-full gap-3.5 py-3.5 px-[18px]">
                             <label className="cursor-pointer" htmlFor="search">
                                 <SearchIcon />
                             </label>

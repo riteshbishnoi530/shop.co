@@ -7,8 +7,8 @@ import React from "react";
 
 const Footer = () => {
     return (
-        <div className="bg-[#F0F0F0] px-4">
-            <div className="bg-black max-w-[1240px] mx-auto py-9 max-md:pt-8 max-md:pb-7 flex rounded-[20px] max-md:flex-col justify-between px-16 max-lg:px-6">
+        <div className="bg-[#F0F0F0] px-4 mt-25 max-lg:mt-30">
+            <div className="bg-black max-w-[1240px] -translate-y-[101px] max-lg:-translate-y-[120px] max-:-mdtranslate-y-[150px] gap-y-8 mx-auto py-9 max-md:pt-8 max-md:pb-7 flex rounded-[20px] max-md:flex-col justify-between px-16 max-lg:px-6">
                 <p className="font-bold text-[40px] text-white max-w-[551px] max-md:text-[32px] font-integral">STAY UPTO DATE ABOUT OUR LATEST OFFERS</p>
                 <div className="flex flex-col max-md:mx-auto gap-[14px] w-full max-w-[350px]">
                     <div className="bg-white max-w-[349px] w-full py-3 flex items-center px-4 rounded-[62px]">
@@ -18,8 +18,8 @@ const Footer = () => {
                     <button className="max-w-[349px] w-full bg-white py-3 font-medium rounded-[62px]">Subscribe to Newsletter</button>
                 </div>
             </div>
-            <div className="max-w-[1240px] mx-auto">
-                <div className="pt-[150px] pb-[50px] max-md:pb-6 flex items-start justify-between max-lg:flex-wrap">
+            <div className="max-w-[1240px] mx-auto -mt-[50px] max-lg:-mt-[60px] max-sm:-mt-[80px]">
+                <div className="pb-[50px] max-md:pb-6 flex items-start justify-between max-lg:flex-wrap">
                     <div>
                         <Link
                             href="/"

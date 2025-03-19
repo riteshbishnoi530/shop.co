@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Heading() {
+function Heading({customHeading, headingClass}:any) {
   return (
-    <div>Heading</div>
+    <h2 className={`text-black font-bold text-5xl max-sm:text-4xl font-integral uppercase ${headingClass}`}>{customHeading}</h2>
   )
 }
 
