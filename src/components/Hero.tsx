@@ -1,7 +1,6 @@
 import React from 'react'
 import Header from './common/Header'
 import Image from 'next/image';
-import { BRANDS_LIST } from '@/utils/helper';
 const Hero = () => {
     return (
         <>

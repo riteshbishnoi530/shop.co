@@ -1,21 +1,27 @@
 "use client";
-import Image from "next/image";
 import {
-    ALSO_LIKE_LIST,
+  ALSO_LIKE_LIST,
   NEW_ARRIVALS_LIST,
-  SELECT_COLOR,
-  SELECT_SIZE,
   TOP_SELLING_LIST,
 } from "@/utils/helper";
-import { useState } from "react";
-// import CustomButton from "../common/CustomButton";
 import { useParams } from "next/navigation";
+import { useState, useEffect } from "react";
+import { ToastContainer } from "react-toastify";
+import ProductImages from "./ProductImages";
 import Product from "./Product";
-import ImageView from "./ImageView";
 
 const ProductView = () => {
   const params = useParams();
   const { title } = params;
+  const [cart, setCart] = useState<any[]>([]);
+
+  useEffect(() => {
+    const storedCart = localStorage.getItem("cart");
+    if (storedCart) {
+      setCart(JSON.parse(storedCart));
+    }
+  }, []);
+
   console.log("Title from params:", title);
 
   const combinedList = [
@@ -25,7 +31,7 @@ const ProductView = () => {
   ];
 
   const product = combinedList.find((item) => {
-    const formattedTitle = title?.toLowerCase().replace(/ /g, "-");
+    const formattedTitle = Array.isArray(title) ? title.join("-").toLowerCase() : title?.toLowerCase().replace(/ /g, "-");
     const formattedProductTitle = item.productTitle
       .toLowerCase()
       .replace(/ /g, "-");
@@ -34,23 +40,31 @@ const ProductView = () => {
 
   console.log("Selected Product:", product);
 
+  if (!product) {
+    return <p>Product not found</p>;
+  }
+
   return (
-    <div>
+    <div className="px-4">
+      <ToastContainer position="top-right" />
       <div className="max-w-[1240px] mx-auto container">
-        <div className="flex gap-10">
-          <ImageView
+        <div className="flex gap-10 max-xl:flex-col">
+          <ProductImages
             productImage={product?.product}
-            productImageTwo={product?.productImageTwo}
-            productImageThree={product?.productImageThree}
+            productImageTwo={product?.product}
+            productImageThree={product?.product}
           />
           <Product
             productTitle={product?.productTitle}
-            productStart={product?.productRatingStart}
+            productStart={product?.productRatingStar}
             productRating={product?.productRating}
             productDescription={product?.productDescription}
             productDiscount={product?.discount}
-            price={product?.price}
+            price={product?.price || ""}
             productPrice={product?.productPrice}
+            cart={cart}
+            setCart={setCart}
+            productImage={product?.product}
           />
         </div>
       </div>

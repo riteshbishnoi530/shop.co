@@ -3,11 +3,14 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { CartIcon, DropDownArrow, SearchIcon } from "../../utils/icons";
 import { HEADER_LIST } from "@/utils/helper";
+import SignUp from "./signUp";
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
+        <div>
+            <SignUp/>
         <div className="px-4">
             <div className="max-w-[1240px] py-6 container mx-auto">
                 <div className="flex items-center gap-10 max-md:justify-between max-xl:gap-8 max-lg:gap-6">
@@ -96,6 +99,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     );
 };

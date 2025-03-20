@@ -107,7 +107,7 @@ export const FOOTER_LIST = [
     {
       product: "/assets/images/t-shirt-with-tape-details.webp",
       productRatingStar:"/assets/images/four-half-star.webp",
-      productTitle: "T-SHIRT WITH TAPE DETAILS",
+      productTitle: "T-shirt with Tape Details",
       productRating: 4.5,
       productPrice: 120,
       productDescription:
@@ -116,7 +116,7 @@ export const FOOTER_LIST = [
     {
       product: "/assets/images/skinny-fit-jeans.webp",
       productRatingStar:"/assets/images/three-half-star.webp",
-      productTitle: "SKINNY FIT JEANS",
+      productTitle: "Skinny Fit Jeans",
       productRating: 4.5,
       productPrice: 240,
       discount: -20,
@@ -127,7 +127,7 @@ export const FOOTER_LIST = [
     {
       product: "/assets/images/checkered-shirt.webp",
       productRatingStar:"/assets/images/four-half-star.webp",
-      productTitle: "CHECKERED SHIRT",
+      productTitle: "Checkered Shirt",
       productRating: 4.5,
       productPrice: 180,
       productDescription:
@@ -136,7 +136,7 @@ export const FOOTER_LIST = [
     {
       product: "/assets/images/sleeve-striped-t-shirt.webp",
       productRatingStar:"/assets/images/four-half-star.webp",
-      productTitle: "SLEEVE STRIPED T-SHIRT",
+      productTitle: "Sleeve Striped T-shirt",
       productRating: 4.5,
       productPrice: 130,
       discount: -30,
@@ -149,7 +149,7 @@ export const FOOTER_LIST = [
     {
       product: "/assets/images/vertical-striped-shirt.webp",
       productRatingStar:"/assets/images/five-stars.webp",
-      productTitle: "VERTICAL STRIPED SHIRT",
+      productTitle: "Vertical Striped Shirt",
       productRating: 5.0,
       productPrice: 212,
       discount: -20,
@@ -160,7 +160,7 @@ export const FOOTER_LIST = [
     {
       product: "/assets/images/courage-graphic-t-shirt.webp",
       productRatingStar:"/assets/images/four-star.webp",
-      productTitle: "COURAGE GRAPHIC T-SHIRT",
+      productTitle: "Courage Graphic T-Shirt",
       productRating: 4.0,
       productPrice: 145,
       productDescription:
@@ -169,7 +169,7 @@ export const FOOTER_LIST = [
     {
       product: "/assets/images/loose-fit-bermuda-shorts.webp",
       productRatingStar:"/assets/images/three-star.webp",
-      productTitle: "LOOSE FIT BERMUDA SHORTS",
+      productTitle: "Loose Fit Bermuda Shorts",
       productRating: 3.0,
       productPrice: 80,
       productDescription:
@@ -178,7 +178,7 @@ export const FOOTER_LIST = [
     {
       product: "/assets/images/faded-skinny-jeans.webp",
       productRatingStar:"/assets/images/four-half-star.webp",
-      productTitle: "FADED SKINNY JEANS",
+      productTitle: "Faded Skinny Jeans",
       productRating: 4.5,
       productPrice: 210,
       productDescription:
@@ -314,6 +314,18 @@ export const REVIEWS_LIST = [
   },
 ];
 
-export const SELECT_COLOR = ["brown", "green", "blue"];
+export const SELECT_COLOR = ["dark", "green", "blue"];
 
 export const SELECT_SIZE = ["Small", "Medium", "Large", "X-Large"];
+
+export const COUNT_LIST = [
+  {
+    description: "International Brands",
+  },
+  {
+    description: "High-Quality Products",
+  },
+  {
+    description: "Happy Customers",
+  },
+];

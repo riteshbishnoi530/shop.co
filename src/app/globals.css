@@ -18,15 +18,23 @@
   font-family: 'integral-cf';
 }
 
-.bg-custom-grey{
-  background-color: #F0F0F0;
-}
 .footer-icon:hover path {
 fill: white;
 }
 
-
 .payment-company-images {
   box-shadow: 0px 0.45px 4.48px 0px #b7b7b714;
   box-shadow: 0px 4.48px 8.96px 0px #b7b7b714;
+}
+
+.dark{
+  background-color: #4F4631;
+}
+
+.green{
+  background-color: #314F4A;
+}
+
+.blue{
+  background-color: #31344F;
 }

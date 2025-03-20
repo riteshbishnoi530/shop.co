@@ -1,7 +1,7 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const ImageView = ({
+const ProductImages = ({
   productImage,
   productImageTwo,
   productImageThree,
@@ -10,12 +10,17 @@ const ImageView = ({
   productImageTwo?: any;
   productImageThree?: any;
 }) => {
-  // Set the initial image to productImage
   const [selectedImage, setSelectedImage] = useState(productImage || "");
 
+  useEffect(() => {
+    if (selectedImage) {
+      localStorage.setItem("selectedImage", selectedImage);
+    }
+  }, [selectedImage]);
+
   return (
-    <div className="flex gap-3.5">
-      <div className="flex flex-col gap-3.5">
+    <div className="flex gap-3.5 max-xl:flex-col-reverse">
+      <div className="flex flex-col max-xl:flex-row max-xl:justify-center gap-3.5">
         <div
           className="cursor-pointer rounded-[20px] overflow-hidden"
           onClick={() => setSelectedImage(productImage)}
@@ -24,8 +29,8 @@ const ImageView = ({
             src={productImage || ""}
             width={152}
             height={167}
-            alt="Skinny Fit Jeans"
-            className="w-[152px] h-[167px] object-cover bg-light-blue"
+            alt="Product Image 1"
+            className="w-[152px] h-[167px] max-sm:w-[111px] max-sm:h-[106px] object-cover bg-light-blue"
           />
         </div>
         <div
@@ -36,8 +41,8 @@ const ImageView = ({
             src={productImageTwo || ""}
             width={152}
             height={167}
-            alt="T-Shirt with Tape Details"
-            className="w-[152px] h-[167px] object-cover bg-light-blue"
+            alt="Product Image 2"
+            className="w-[152px] h-[167px] max-sm:w-[111px] max-sm:h-[106px] object-cover bg-light-blue"
           />
         </div>
         <div
@@ -48,19 +53,19 @@ const ImageView = ({
             src={productImageThree || ""}
             width={152}
             height={167}
-            alt="Vertical Striped Shirt"
-            className="w-[152px] h-[167px] object-cover bg-light-blue"
+            alt="Product Image 3"
+            className="w-[152px] h-[167px] max-sm:w-[111px] max-sm:h-[106px] object-cover bg-light-blue"
           />
         </div>
       </div>
-      <div className="rounded-[20px] bg-light-blue overflow-hidden">
+      <div className="rounded-[20px] bg-light-blue max-xl:justify-center max-xl:flex overflow-hidden">
         {selectedImage ? (
           <Image
             src={selectedImage}
             width={444}
             height={530}
             alt="Selected Product"
-            className="w-[444px] h-[530px] object-cover"
+            className="w-[444px] h-[530px] max-md:h-[450px] max-sm:h-[290px] max-xl:h-[446px] object-cover max-sm:object-contain"
           />
         ) : (
           <p>No Image Available</p>
@@ -70,4 +75,4 @@ const ImageView = ({
   );
 };
 
-export default ImageView;
+export default ProductImages;

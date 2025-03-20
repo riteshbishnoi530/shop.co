@@ -18,6 +18,17 @@ const Items = ({
   itemMap,
   buttonText,
 }: SellItemsProps) => {
+  const handleAddToCart = (item: SellItemsType) => {
+    const existingCart = localStorage.getItem("cart");
+    const cartItems = existingCart ? JSON.parse(existingCart) : [];
+
+    cartItems.push(item);
+
+    localStorage.setItem("cart", JSON.stringify(cartItems));
+
+    console.log("Item added to cart:", item);
+  };
+
   return (
     <div className="max-w-[1240px] mx-auto">
       <Heading customHeading={heading} headingClass="mb-[55px] max-sm:mb-8 text-center uppercase" />
@@ -58,16 +69,15 @@ const Items = ({
                 {item.productTitle}
               </p>
               <span className="flex items-center py-2 gap-[13px]">
-              {item.productRatingStar && (
-  <Image
-    className="max-h-[18px] w-fit"
-    src={item.productRatingStar}
-    alt="star"
-    width={104}
-    height={18}
-  />
-)}
-
+                {item.productRatingStar && (
+                  <Image
+                    className="max-h-[18px] w-fit"
+                    src={item.productRatingStar}
+                    alt="star"
+                    width={104}
+                    height={18}
+                  />
+                )}
                 <p className="text-sm">
                   {item.productRating}/<span className="text-gray">5</span>
                 </p>
