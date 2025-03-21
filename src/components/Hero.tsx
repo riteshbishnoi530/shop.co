@@ -16,7 +16,7 @@ const Hero = () => {
     return (
         <>
             <Header cartItemCount={cartItemCount} />
-            <div className="relative bg-[#F2F0F1] overflow-hidden">
+            <div className="relative overflow-x-hidden bg-[#F2F0F1] overflow-hidden">
                 <div className="flex items-end  max-w-[1240px]  mx-auto relative h-[663px] max-lg:h-full max-lg:flex-col">
                     <div className="pt-[103px] px-4 pb-[116px] max-lg:pb-0 max-xl:pt-20 max-lg:pt-10 max-md:pt-8 relative z-10 mr-auto max-lg:ml-auto">
                         <h1 className="text-[64px] font-bold font-integral leading-[64px] max-w-[577px] max-lg:max-w-[700px] max-lg:text-5xl max-sm:text-[36px] max-sm:leading-[34px]">
@@ -62,18 +62,14 @@ const Hero = () => {
 
                         </div>
                     </div>
-                    <div className="">
-                        <div>
                             <Image
                                 src="/assets/images/hero-image.webp"
                                 alt="infulencers-img"
                                 width={655}
                                 height={500}
-                                className="w-full max-w-[655px] max-xl:max-w-[460px] max-lg:max-w-[555px] pointer-events-none"
+                                className="w-full max-lg:mx-auto xl:-mr-10 max-w-[655px] max-xl:max-w-[460px] max-lg:max-w-[555px] pointer-events-none"
                             />
 
-                        </div>
-                    </div>
                 </div>
             </div>
         </>
