@@ -1,8 +1,9 @@
 "use client";
-import { AddIcon, DeleteIcon, SubIcon } from "@/utils/icons";
+import { AddIcon, DeleteIcon, LeftIcon, SubIcon } from "@/utils/icons";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import OrderSummary from "./OrderSummery";
+import Link from "next/link";
 
 interface CartItem {
   title: string;
@@ -59,8 +60,12 @@ const YourCart = () => {
 
   return (
     <div className="px-4 pb-20">
-      <h1 className="text-2xl font-bold mb-4">Your Cart</h1>
       <div className="max-w-[1240px] w-full mx-auto">
+        <div className="flex gap-3">
+          <Link href="/" className="text-black/60 gap-2 flex items-center">Home <LeftIcon/> </Link>
+          <Link href="/cart" className="text-black">Cart</Link>
+        </div>
+      <h1 className="text-[40px] uppercase font-integral font-bold mb-4">Your Cart</h1>
         {cartItems.length === 0 ? (
           <p>Your cart is empty.</p>
         ) : (
