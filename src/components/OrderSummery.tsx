@@ -12,8 +12,6 @@ interface CartItem {
 const OrderSummary = ({
   cartItems,
   discount,
-  subtotal,
-  total
 }: {
   cartItems: CartItem[];
   discount: number;

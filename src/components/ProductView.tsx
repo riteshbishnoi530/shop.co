@@ -51,8 +51,8 @@ const ProductView = () => {
         <div className="flex gap-10 max-xl:flex-col">
           <ProductImages
             productImage={product?.product}
-            productImageTwo={product?.product}
-            productImageThree={product?.product}
+            productImageTwo={product?.productImageTwo}
+            productImageThree={product?.productImageThree}
           />
           <Product
             productTitle={product?.productTitle}

@@ -4,7 +4,7 @@ import { NextArrow, PrevArrow } from "@/utils/icons";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/autoplay"; // Import Swiper's autoplay styles
+import "swiper/css/autoplay";
 import { Navigation, Autoplay } from "swiper/modules";
 import { OUR_HAPPY_CUSTOMERS } from "@/utils/helper";
 import Heading from "./common/Heading";

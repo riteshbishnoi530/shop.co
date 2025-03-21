@@ -7,6 +7,8 @@ export interface SellItemsType {
   discount?: number;
   price?: number;
   productDescription: string;
+  productImageTwo?: string;
+  productImageThree?: string;
 }
 
 export interface HappyCustomers{
@@ -110,8 +112,9 @@ export const FOOTER_LIST = [
       productTitle: "T-shirt with Tape Details",
       productRating: 4.5,
       productPrice: 120,
-      productDescription:
-        "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+      productDescription:"This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+        productImageTwo:"/assets/images/courage-graphic-t-shirt.webp",
+        productImageThree:"/assets/images/polo-with-contrast-trims.webp",
     },
     {
       product: "/assets/images/skinny-fit-jeans.webp",
@@ -121,8 +124,9 @@ export const FOOTER_LIST = [
       productPrice: 240,
       discount: -20,
       price: 260,
-      productDescription:
-        "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+      productDescription:"This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+      productImageTwo:"/assets/images/faded-skinny-jeans.webp",
+      productImageThree:"/assets/images/loose-fit-bermuda-shorts.webp",
     },
     {
       product: "/assets/images/checkered-shirt.webp",
@@ -130,8 +134,9 @@ export const FOOTER_LIST = [
       productTitle: "Checkered Shirt",
       productRating: 4.5,
       productPrice: 180,
-      productDescription:
-        "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+      productDescription:"This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+      productImageTwo:"/assets/images/vertical-striped-shirt.webp",
+      productImageThree:"/assets/images/polo-with-contrast-trims.webp",
     },
     {
       product: "/assets/images/sleeve-striped-t-shirt.webp",
@@ -141,8 +146,9 @@ export const FOOTER_LIST = [
       productPrice: 130,
       discount: -30,
       price: 160,
-      productDescription:
-        "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+      productDescription:"This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+      productImageTwo:"/assets/images/courage-graphic-t-shirt.webp",
+      productImageThree:"/assets/images/polo-with-contrast-trims.webp",
     },
   ];
   export const TOP_SELLING_LIST: SellItemsType[] = [
@@ -154,8 +160,9 @@ export const FOOTER_LIST = [
       productPrice: 212,
       discount: -20,
       price: 232,
-      productDescription:
-        "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+      productDescription:"This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+      productImageTwo:"/assets/images/checkered-shirt.webp",
+      productImageThree:"/assets/images/polo-with-contrast-trims.webp",
     },
     {
       product: "/assets/images/courage-graphic-t-shirt.webp",
@@ -163,8 +170,9 @@ export const FOOTER_LIST = [
       productTitle: "Courage Graphic T-Shirt",
       productRating: 4.0,
       productPrice: 145,
-      productDescription:
-        "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+      productDescription:"This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+      productImageTwo:"/assets/images/sleeve-striped-t-shirt.webp",
+      productImageThree:"/assets/images/polo-with-contrast-trims.webp",
     },
     {
       product: "/assets/images/loose-fit-bermuda-shorts.webp",
@@ -172,8 +180,9 @@ export const FOOTER_LIST = [
       productTitle: "Loose Fit Bermuda Shorts",
       productRating: 3.0,
       productPrice: 80,
-      productDescription:
-        "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+      productDescription:"This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+      productImageTwo:"/assets/images/faded-skinny-jeans.webp",
+      productImageThree:"/assets/images/skinny-fit-jeans.webp",
     },
     {
       product: "/assets/images/faded-skinny-jeans.webp",
@@ -181,8 +190,9 @@ export const FOOTER_LIST = [
       productTitle: "Faded Skinny Jeans",
       productRating: 4.5,
       productPrice: 210,
-      productDescription:
-        "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+      productDescription:"This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+      productImageTwo:"/assets/images/faded-skinny-jeans.webp",
+      productImageThree:"/assets/images/loose-fit-bermuda-shorts.webp",
     },
   ];
 
@@ -195,8 +205,9 @@ export const FOOTER_LIST = [
       productPrice: 212,
       discount: -20,
       price: 232,
-      productDescription:
-        "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+      productDescription:"This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+      productImageTwo:"/assets/images/courage-graphic-t-shirt.webp",
+      productImageThree:"/assets/images/polo-with-contrast-trims.webp",
     },
     {
       product: "/assets/images/gradient-graphic-t-shirt.webp",
@@ -204,8 +215,9 @@ export const FOOTER_LIST = [
       productTitle: "Gradient Graphic T-shirt",
       productRating: 3.5,
       productPrice: 145,
-      productDescription:
-        "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+      productDescription:"This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+      productImageTwo:"/assets/images/courage-graphic-t-shirt.webp",
+      productImageThree:"/assets/images/polo-with-contrast-trims.webp",
     },
     {
       product: "/assets/images/polo-with-tipping-details.webp",
@@ -213,8 +225,9 @@ export const FOOTER_LIST = [
       productTitle: "Polo with Tipping Details",
       productRating: 4.5,
       productPrice: 80,
-      productDescription:
-        "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+      productDescription:"This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+      productImageTwo:"/assets/images/courage-graphic-t-shirt.webp",
+      productImageThree:"/assets/images/polo-with-contrast-trims.webp",
     },
     {
       product: "/assets/images/black-striped-t-shirt.webp",
@@ -223,8 +236,9 @@ export const FOOTER_LIST = [
       productRating: 5.0,
       discount: -30,
       productPrice: 210,
-      productDescription:
-        "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+      productDescription:"This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+      productImageTwo:"/assets/images/courage-graphic-t-shirt.webp",
+      productImageThree:"/assets/images/polo-with-contrast-trims.webp",
     },
   ];
 

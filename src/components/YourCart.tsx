@@ -6,8 +6,10 @@ import OrderSummary from "./OrderSummery";
 import Link from "next/link";
 
 interface CartItem {
+  productTitle: string;
   title: string;
-  image: any;
+  productImage
+: any;
   color: string;
   size: string;
   quantity: number;
@@ -17,6 +19,7 @@ interface CartItem {
 
 const YourCart = () => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  console.log(cartItems , 'sds ')
 
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");
@@ -79,22 +82,18 @@ const YourCart = () => {
                     key={index}
                   >
                     <div className="bg-light-blue rounded-[8.66px] overflow-hidden">
-                      {item.image ? (
+                      {item.productImage && (
                         <Image
-                          src={item.image}
+                          src={item.productImage}
                           alt="Product Image"
                           width={124}
                           height={124}
                         />
-                      ) : (
-                        <div className="w-[124px] h-[124px] bg-gray-200 flex justify-center items-center rounded-[8.66px]">
-                          <span className="text-sm text-gray-500">No Image</span>
-                        </div>
                       )}
                     </div>
                     <div className="flex flex-col w-full">
                       <div className="flex w-full justify-between">
-                        <p className="text-xl font-bold leading-[100%]">{item.title}</p>
+                        <p className="text-xl font-bold leading-[100%]">{item.productTitle}</p>
                         <button
                           className="cursor-pointer"
                           onClick={() => handleRemoveItem(index)}

@@ -35,10 +35,10 @@ const NewsLater = () => {
         try {
             if (form.current) {
                 await emailjs.sendForm(
-                    "service_vubs3cl",
+                    "service_346bxam",
                     "template_lb5dsje",
                     form.current,
-                    "aKxsD9MpKuUVpMSgP"
+                    "REssh9lCTYt62QNe0"
                 );
                 setUserEmail("");
                 toast.success("Successfully subscribed to the newsletter!");
