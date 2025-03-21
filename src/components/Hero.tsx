@@ -1,10 +1,21 @@
-import React from 'react'
+"use client";
+import React, { useEffect, useState } from 'react'
 import Header from './common/Header'
 import Image from 'next/image';
 const Hero = () => {
+    const [cartItems, setCartItems] = useState<any[]>([]);
+   const [cartItemCount, setCartItemCount] = useState(0);
+    useEffect(() => {
+       const storedCart = localStorage.getItem("cart");
+       if (storedCart) {
+         const cart = JSON.parse(storedCart);
+         setCartItems(cart);
+         setCartItemCount(cart.reduce((acc: number, item: any) => acc + item.quantity, 0)); // Calculate the initial cart count
+       }
+     }, []);
     return (
         <>
-            <Header />
+            <Header cartItemCount={cartItemCount} />
             <div className="relative bg-[#F2F0F1] overflow-hidden">
                 <div className="flex items-end  max-w-[1240px]  mx-auto relative h-[663px] max-lg:h-full max-lg:flex-col">
                     <div className="pt-[103px] px-4 pb-[116px] max-lg:pb-0 max-xl:pt-20 max-lg:pt-10 max-md:pt-8 relative z-10 mr-auto max-lg:ml-auto">
