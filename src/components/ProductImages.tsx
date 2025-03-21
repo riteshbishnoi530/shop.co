@@ -19,9 +19,8 @@ const ProductImages = ({
   }, [selectedImage]);
 
   return (
-    <div className="flex gap-3.5 max-xl:flex-col-reverse">
-      <div className="flex flex-col max-xl:flex-row max-xl:justify-center gap-3.5">
-        {/* Thumbnail Image 1 */}
+    <div className="flex gap-3.5 max-md:flex-col-reverse max-xl:mx-auto">
+      <div className="flex flex-col max-md:flex-row max-xl:justify-center gap-3.5">
         {productImage && (
           <div
             className="cursor-pointer rounded-[20px] overflow-hidden"
@@ -37,7 +36,6 @@ const ProductImages = ({
           </div>
         )}
 
-        {/* Thumbnail Image 2 */}
         {productImageTwo && (
           <div
             className="cursor-pointer rounded-[20px] overflow-hidden"
@@ -53,7 +51,6 @@ const ProductImages = ({
           </div>
         )}
 
-        {/* Thumbnail Image 3 */}
         {productImageThree && (
           <div
             className="cursor-pointer rounded-[20px] overflow-hidden"
@@ -70,7 +67,6 @@ const ProductImages = ({
         )}
       </div>
 
-      {/* Main selected image display */}
       <div className="rounded-[20px] bg-light-blue max-xl:justify-center max-xl:flex overflow-hidden">
         {selectedImage ? (
           <Image
@@ -78,10 +74,10 @@ const ProductImages = ({
             width={444}
             height={530}
             alt="Selected Product"
-            className="w-[444px] h-[530px] max-md:h-[450px] max-sm:h-[290px] max-xl:h-[446px] object-cover max-sm:object-contain"
+            className="w-[444px] h-[530px] max-md:h-[450px] max-sm:h-[290px] object-cover max-sm:object-contain"
           />
         ) : (
-          <p>No Image Available</p> // Optional fallback when no image is selected
+          <p>No Image Available</p>
         )}
       </div>
     </div>

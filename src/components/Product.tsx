@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { SlectIcon } from "@/utils/icons";
 import { SELECT_COLOR, SELECT_SIZE } from "@/utils/helper";
 import Image from "next/image";
+import Swal from "sweetalert2"; // Import SweetAlert2
 
 const Product = ({
     productTitle,
@@ -43,12 +44,38 @@ const Product = ({
             productImage,
             quantity,
             color: SELECT_COLOR[activeIndex],
-        size: SELECT_SIZE[activeButton],
+            size: SELECT_SIZE[activeButton],
         };
-    
+
+        // Check if the product already exists in the cart
+        const existingProduct = cart.find(
+            (item) =>
+                item.productTitle === newProduct.productTitle &&
+                item.color === newProduct.color &&
+                item.size === newProduct.size
+        );
+
+        if (existingProduct) {
+            // Show SweetAlert2 error message
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "This product is already in your cart.",
+            });
+            return;
+        }
+
+        // If the product does not exist, add it to the cart
         const updatedCart = [...cart, newProduct];
         setCart(updatedCart);
         localStorage.setItem("cart", JSON.stringify(updatedCart));
+
+        // Optionally, you can show a success message
+        Swal.fire({
+            icon: "success",
+            title: "Added to Cart",
+            text: `${productTitle} has been added to your cart.`,
+        });
     };
 
     return (
@@ -57,7 +84,7 @@ const Product = ({
                 {productTitle}
             </p>
             <div className="flex gap-4">
-                <Image className="max-h-[24px] w-fit" src={productStart} alt="star" width={139} height={24}/>
+                <Image className="max-h-[24px] w-fit" src={productStart} alt="star" width={139} height={24} />
                 <p className="text-sm">
                     {productRating}/<span className="text-gray">5</span>
                 </p>
@@ -67,9 +94,7 @@ const Product = ({
                 {price && (
                     <span className="w-max relative">
                         <span className="absolute top-[56%] w-full h-[1px] bg-black/40"></span>
-                        <p className="relative text-black/40 text-2xl font-bold ">
-                            ${price}
-                        </p>
+                        <p className="relative text-black/40 text-2xl font-bold ">${price}</p>
                     </span>
                 )}
                 {productDiscount && (
@@ -81,33 +106,35 @@ const Product = ({
             <p className="text-black/60">{productDescription}</p>
             <div className="max-w-[590px] w-full bg-black/10 h-[1px] my-6"></div>
             <p className="text-black/60">Select Colors</p>
-            {/* Color selection */}
-<div className="flex gap-4 mt-4">
-    {SELECT_COLOR.map((item, index) => (
-        <button
-            key={index}
-            className={`cursor-pointer flex justify-center items-center rounded-full ${item} w-10 h-10`} // Set size for color button
-            onClick={() => setActiveIndex(index)}
-        >
-            {index === activeIndex && <SlectIcon />}
-        </button>
-    ))}
-</div>
 
-{/* Size selection */}
-<div className="flex gap-3 mt-4">
-    {SELECT_SIZE.map((item, index) => (
-        <button
-            key={index}
-            onClick={() => setActiveButton(index)}
-            className={`cursor-pointer bg-[#F0F0F0] py-3 text-black/60 px-6 max-sm:px-5 max-sm:text-sm rounded-[62px] ${index === activeButton && "!bg-black text-white"}`}
-        >
-            {item}
-        </button>
-    ))}
-</div>
+            {/* Color selection */}
+            <div className="flex gap-4 mt-4">
+                {SELECT_COLOR.map((item, index) => (
+                    <button
+                        key={index}
+                        className={`cursor-pointer flex justify-center items-center rounded-full ${item} w-10 h-10`} // Set size for color button
+                        onClick={() => setActiveIndex(index)}
+                    >
+                        {index === activeIndex && <SlectIcon />}
+                    </button>
+                ))}
+            </div>
+
+            {/* Size selection */}
+            <div className="flex gap-3 mt-4">
+                {SELECT_SIZE.map((item, index) => (
+                    <button
+                        key={index}
+                        onClick={() => setActiveButton(index)}
+                        className={`cursor-pointer bg-[#F0F0F0] py-3 text-black/60 px-6 max-sm:px-5 max-sm:text-sm rounded-[62px] ${index === activeButton && "!bg-black text-white"}`}
+                    >
+                        {item}
+                    </button>
+                ))}
+            </div>
 
             <div className="max-w-[590px] w-full bg-black/10 h-[1px] my-6"></div>
+
             <div className="flex gap-5">
                 <div className="bg-[#F0F0F0] rounded-[62px] flex py-3.5 px-5 items-center gap-[38px]">
                     <button

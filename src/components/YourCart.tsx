@@ -1,36 +1,27 @@
 "use client";
+import React, { useState, useEffect } from "react";
 import { AddIcon, DeleteIcon, LeftIcon, SubIcon } from "@/utils/icons";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
 import OrderSummary from "./OrderSummery";
 import Link from "next/link";
 
 interface CartItem {
   productTitle: string;
   title: string;
-  productImage
-: any;
+  productImage: any;
   color: string;
   size: string;
   quantity: number;
   price: number;
-  productPrice:number;
+  productPrice: number;
 }
 
-const YourCart = () => {
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
-  console.log(cartItems , 'sds ')
-
-  useEffect(() => {
-    const storedCart = localStorage.getItem("cart");
-    if (storedCart) {
-      setCartItems(JSON.parse(storedCart));
-    }
-  }, []);
+const YourCart = ({ cartItems, setCartItems, setCartItemCount }: { cartItems: CartItem[], setCartItems: React.Dispatch<React.SetStateAction<CartItem[]>>, setCartItemCount: React.Dispatch<React.SetStateAction<number>> }) => {
 
   const handleRemoveItem = (index: number) => {
     const updatedCart = cartItems.filter((_, i) => i !== index);
     setCartItems(updatedCart);
+    setCartItemCount(updatedCart.reduce((acc: number, item: CartItem) => acc + item.quantity, 0)); // Update cart count
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
@@ -43,6 +34,7 @@ const YourCart = () => {
     }
 
     setCartItems(updatedCart);
+    setCartItemCount(updatedCart.reduce((acc: number, item: CartItem) => acc + item.quantity, 0)); // Update cart count
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
@@ -65,10 +57,10 @@ const YourCart = () => {
     <div className="px-4 pb-20">
       <div className="max-w-[1240px] w-full mx-auto">
         <div className="flex gap-3">
-          <Link href="/" className="text-black/60 gap-2 flex items-center">Home <LeftIcon/> </Link>
+          <Link href="/" className="text-black/60 gap-2 flex items-center">Home <LeftIcon /> </Link>
           <Link href="/cart" className="text-black">Cart</Link>
         </div>
-      <h1 className="text-[40px] uppercase font-integral font-bold mb-4">Your Cart</h1>
+        <h1 className="text-[40px] uppercase font-integral font-bold mb-4">Your Cart</h1>
         {cartItems.length === 0 ? (
           <p>Your cart is empty.</p>
         ) : (
@@ -93,7 +85,7 @@ const YourCart = () => {
                     </div>
                     <div className="flex flex-col w-full">
                       <div className="flex w-full justify-between">
-                        <p className="text-xl font-bold leading-[100%]">{item.productTitle}</p>
+                        <p className="text-xl max-sm:text-base font-bold leading-[100%]">{item.productTitle}</p>
                         <button
                           className="cursor-pointer"
                           onClick={() => handleRemoveItem(index)}
@@ -101,15 +93,15 @@ const YourCart = () => {
                           <DeleteIcon />
                         </button>
                       </div>
-                      <p className={`text-sm leading-[100%] text-black`}>
+                      <p className={`text-sm max-sm:text-xs leading-[100%] mb-1 text-black`}>
                         Size: <span className="text-black/60 mt-0.5">{item.size}</span>
                       </p>
-                      <p className={`text-sm leading-[100%] text-black`}>
+                      <p className={`text-sm max-sm:text-xs leading-[100%] text-black`}>
                         Color: <span className="text-black/60">{item.color}</span>
                       </p>
                       <div className="flex justify-between mt-1.5 items-baseline">
                         <p className="font-bold text-2xl leading-[100%]">${item.productPrice}</p>
-                        <div className="flex px-5 py-3 items-center gap-5 bg-light-blue rounded-[62px]">
+                        <div className="flex px-5 py-3 items-center gap-5 bg-[#F0F0F0] rounded-[62px]">
                           <button
                             onClick={() => handleQuantityChange(index, -1)}
                             className="flex cursor-pointer"
@@ -134,13 +126,13 @@ const YourCart = () => {
                 ))}
               </div>
             </div>
-                <div className="max-lg:mx-auto">
-            <OrderSummary
-              subtotal={calculateSubtotal()}
-              discount={20}
-              total={calculateTotal()}
-              cartItems={cartItems}
-            />
+            <div className="max-lg:mx-auto">
+              <OrderSummary
+                subtotal={calculateSubtotal()}
+                discount={20}
+                total={calculateTotal()}
+                cartItems={cartItems}
+              />
             </div>
           </div>
         )}

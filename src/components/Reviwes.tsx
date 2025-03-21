@@ -26,7 +26,7 @@ const Reviwes = () => {
                             className={`max-w-[414px] px-3 flex justify-center pb-5 border-b-2  relative w-full ${isActive ? " border-black" : "border-transparent"
                                 }`}
                         >
-                            <Link
+                            <Link scroll={false}
                                 href={`?tab=${itemSlug}`}
                                 className={`text-center text-xl max-sm:text-base max-md:text-lg whitespace-nowrap leading-[100%] ${isActive && "font-medium"
                                     }`}
@@ -42,7 +42,7 @@ const Reviwes = () => {
                 <Reviews />
             ) : (
                 <div className="my-10">
-                    <h2 className="text-4xl max-sm:text-3xl font-integral text-center font-bold">Comming soon</h2>
+                    <h2 className="text-4xl max-sm:text-3xl font-integral text-center font-bold">Coming soon</h2>
                 </div>
             )}
         </div>
