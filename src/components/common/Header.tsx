@@ -16,7 +16,7 @@ const Header = () => {
                 <div className="flex items-center gap-10 max-md:justify-between max-xl:gap-8 max-lg:gap-6">
                     <div className="flex gap-4 items-center">
                         <button
-                            className="md:hidden h-[15px] relative z-50 overflow-hidden w-[19px] flex flex-col justify-between"
+                            className="cursor-pointer md:hidden h-[15px] relative z-50 overflow-hidden w-[19px] flex flex-col justify-between"
                             onClick={() => setIsOpen(!isOpen)}
                         >
                             <span

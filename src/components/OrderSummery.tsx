@@ -86,9 +86,9 @@ const OrderSummary = ({
               placeholder="Add promo code"
             />
           </div>
-          <button className="rounded-[62px] py-[13px] px-[38.5px] bg-black hover:bg-white font-medium text-white hover:text-black">Apply</button>
+          <button className="cursor-pointer rounded-[62px] py-[13px] px-[38.5px] bg-black border border-black  transition-all duration-300 ease-linear hover:bg-white font-medium text-white hover:text-black">Apply</button>
         </form>
-        <button className="rounded-[62px] gap-[14.63px] flex py-[19px] w-full justify-center items-center group bg-black text-white hover:bg-white hover:text-black font-medium">Go to Checkout </button>
+        <button className="cursor-pointer rounded-[62px] gap-[14.63px] flex py-[19px] w-full justify-center items-center group bg-black border border-black  transition-all duration-300 ease-linear text-white hover:bg-white hover:text-black font-medium">Go to Checkout </button>
         
         </div>
       </div>

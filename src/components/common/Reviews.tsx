@@ -64,7 +64,7 @@ const Reviews = () => {
           ))}
         </div>
         <div className="flex justify-center items-center w-full pt-9">
-          <button className="border border-black/10 py-[15px] max-w-[230px] rounded-[62px] w-full">Load More Reviews</button>
+          <button className="cursor-pointer border border-black/10 py-[15px] max-w-[230px] rounded-[62px] w-full">Load More Reviews</button>
         </div>
       </div>
     </div>

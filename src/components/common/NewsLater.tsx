@@ -86,7 +86,7 @@ const NewsLater = () => {
                             </p>
                         )}
                     </div>
-                    <button className="bg-white rounded-[62px] font-medium leading-[100%] w-full py-3.5">
+                    <button className="cursor-pointer bg-white rounded-[62px] font-medium leading-[100%] w-full py-3.5">
                         Subscribe to Newsletter
                     </button>
                 </form>

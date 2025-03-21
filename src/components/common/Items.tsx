@@ -18,16 +18,6 @@ const Items = ({
   itemMap,
   buttonText,
 }: SellItemsProps) => {
-  const handleAddToCart = (item: SellItemsType) => {
-    const existingCart = localStorage.getItem("cart");
-    const cartItems = existingCart ? JSON.parse(existingCart) : [];
-
-    cartItems.push(item);
-
-    localStorage.setItem("cart", JSON.stringify(cartItems));
-
-    console.log("Item added to cart:", item);
-  };
 
   return (
     <div className="max-w-[1240px] mx-auto">
@@ -106,7 +96,7 @@ const Items = ({
       </Swiper>
       {buttonText && (
         <div className="w-full flex justify-center items-center pt-[51px]">
-          <button className="py-[13px] px-[78px] hover:bg-black hover:text-white border rounded-[62px] border-black/10 font-medium">{buttonText}</button>
+          <button className="cursor-pointer py-[13px] px-[78px] transition-all duration-300 ease-linear hover:bg-black hover:text-white border rounded-[62px] border-black/10 font-medium">{buttonText}</button>
         </div>
       )}
     </div>

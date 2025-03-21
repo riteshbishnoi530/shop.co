@@ -122,7 +122,7 @@ const Product = ({
                 </div>
                 <button
                     onClick={addToCart}
-                    className="w-full py-[13px] bg-black rounded-[62px] text-white hover:bg-white hover:text-black"
+                    className="w-full py-[13px] cursor-pointer bg-black border transition-all duration-300 ease-linear border-black rounded-[62px] text-white hover:bg-white hover:text-black"
                 >
                     Add to Cart
                 </button>
